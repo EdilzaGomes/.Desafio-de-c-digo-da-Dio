@@ -1,7 +1,35 @@
-# For more details, see https://containers.dev/guide/dependabot
-version: 2
-updates:
-  - package-ecosystem: "devcontainers"
-    directory: "/"
-    schedule:
-      interval: weekly
+# ```java
+import java.util.Scanner;
+
+public class AplicacaoIA {
+
+    // Função responsável por receber uma área de aplicação e retornar a sua respectiva descrição
+    public static String descreverAplicacao(String area) {
+        if (area.equalsIgnoreCase("saúde")) {
+            return "Diagnóstico precoce e tratamento personalizado.";
+        } else if (area.equalsIgnoreCase("educação")) {
+            return "Personalização de aprendizado e tutoria inteligente.";
+        } else if (area.equalsIgnoreCase("transporte")) {
+            return "Veículo autônomo e otimização de rotas.";
+        } else if (area.equalsIgnoreCase("segurança")) {
+            return "Monitoramento e prevenção de crimes.";
+        } else {
+            return "Área de aplicação desconhecida.";
+        }
+    }
+
+    public static void main(String[] args) {
+        // Solicita ao usuário que digite uma área de aplicação
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite a área de aplicação (saúde, educação, transporte, segurança): ");
+        String entrada = scanner.nextLine(); // Lê a entrada do usuário
+
+        // Imprime a descrição da aplicação na área recebida através da função descreverAplicacao
+        String descricao = descreverAplicacao(entrada);
+        System.out.println(descricao);
+
+        // Fecha o scanner
+        scanner.close();
+    }
+}
+```
