@@ -1,0 +1,28 @@
+// Função responsável por receber uma área de aplicação e retornar a sua respectiva descrição
+    public static String descreverAplicacao(String area) {
+        if (area.equalsIgnoreCase("agricultura")) {
+            return "Monitoramento de cultura e previsão de colheita.";
+        } else if (area.equalsIgnoreCase("finanças")) {
+            return "Detecção de fraudes e análise de crédito.";
+        } else if (area.equalsIgnoreCase("varejo")) {
+            return "Personalização de ofertas e gestão de estoque.";
+        } else {
+            return "Área de aplicação desconhecida.";
+        }
+    }
+
+    public static void main(String[] args) {
+        // Solicita ao usuário que digite uma área de aplicação
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite a área de aplicação (agricultura, finanças, varejo): ");
+        String entrada = scanner.nextLine(); // Lê a entrada do usuário
+
+        // Imprime a descrição da aplicação na área recebida através da função descreverAplicacao
+        String descricao = descreverAplicacao(entrada);
+        System.out.println(descricao);
+
+        // Fecha o scanner
+        scanner.close();
+    }
+}
+```
